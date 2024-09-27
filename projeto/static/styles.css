@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comfortaa', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.form-section, .table-section {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ac407b;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.btn-add {
+    background-color: rgb(238, 102, 177);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn-add:hover {
+    background-color: #d396eb;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+table th, table td {
+    padding: 5px;
+    border: 1px solid #d1d5db;
+    text-align: center;
+}
+
+table td {
+    font-size: 12px;
+    text-align: left !important;
+}
+
+td .actions {
+    display: flex;
+    justify-content: center;
+    gap: 5px;  /* Espaçamento entre os botões */
+}
+
+table th {
+    background-color: #eff6ff;
+    color: #ac407b;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+.btn-edit, .btn-delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.btn-edit i {
+    color: #ac407b;
+}
+
+.btn-delete i {
+    color: #ef4444;
+}
+
+.btn-edit:hover {
+    background-color: #e0f2fe;
+}
+
+.btn-delete:hover {
+    background-color: #fee2e2;
+}
+
+h5{
+    color: #8f8c8c;
+}
+
+h3{
+    color: #ff0000;
+}
