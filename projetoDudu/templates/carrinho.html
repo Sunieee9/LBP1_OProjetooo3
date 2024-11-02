@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="form-section">
+        <h1>Carrinho de Compras</h1>
+        {% if carrinho %}
+            <ul>
+                {% for item in carrinho %}
+                    <li>
+                        {{ item.nome }} - R$ {{ item.preco }} x {{ item.quantidade }} = R$ {{ item.subtotal }}
+                        <form method="POST" action="{{ url_for('livro.delete') }}" style="display: inline;">
+                            <input type="hidden" name="id" value="{{ item.id }}">
+                            <button type="submit" class="btn-delete">Remover</button>
+                        </form>
+                    </li>
+                {% endfor %}
+            </ul>
+            <h2>Total: R$ {{ total }}</h2>
+        {% else %}
+            <p>Seu carrinho está vazio.</p>
+        {% endif %}
+        <a href="{{ url_for('livro.livro') }}"><button type="submit"class="btn-add">Voltar à lista de livros</button></a>
+    </div>
+</body>
+</html>

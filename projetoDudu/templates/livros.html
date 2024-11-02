@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livros</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="form-section">
+            <h2>Adicione um Livro ao Carrinho</h2>
+            <form method="POST" action="{{ url_for('livro.livro') }}">
+                <label for="id">Selecione um Livro:</label>
+                <select name="id" id="id">
+                    {% for livro in livros %}
+                        <option value="{{ livro.id }}">{{ livro.titulo }}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit" class="btn-add">Adicionar ao Carrinho</button> 
+            </form>
+        </div>
+        <div class="table-section">
+            <h2>Lista de Livros</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for livro in livros %}
+                    <tr>
+                        <td>{{ livro.titulo }}</td>
+                        <td>R$ {{ livro.preco }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
